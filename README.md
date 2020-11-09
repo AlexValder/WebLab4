@@ -4,5 +4,5 @@ Collaborators: @AlexValder, @ArthurMamedov
 
 ## TODO:
 
-[] Frontend
-[] Backend
+[ ] Frontend
+[ ] Backend
