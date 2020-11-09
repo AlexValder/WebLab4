@@ -4,6 +4,6 @@ Collaborator: @AlexValder
 
 ## TODO:
 
-[x] Create TODO
-[ ] Templates with styles
-[ ] JS scripts
+- [x] Create TODO
+- [ ] Templates with styles
+- [ ] JS scripts

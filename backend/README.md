@@ -4,4 +4,4 @@ Collaborator: @ArthurMamedov
 
 ## TODO
 
-[ ] Create TODO
+- [ ] Create TODO
