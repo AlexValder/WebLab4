@@ -1,0 +1,30 @@
+@import url("./general.css");
+
+body {
+    background-color: #707070;
+    color: black;
+    text-decoration-color: lavender;
+}
+
+#switchTheme:after {
+    content: "Light";
+    background-color: dimgray;
+    color: lavender;
+    border: none;
+}
+
+
+#tabs .tab {
+    background-color: gray;
+}
+
+#tabs .active {
+    border-color: #707070;
+    border-bottom-color: lightseagreen;
+    background-color: lightseagreen;
+}
+
+#tabs .tabContent {
+    border-color: #707070;
+    background-color: lightseagreen;
+}
