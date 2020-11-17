@@ -3,8 +3,25 @@ body {
 }
 
 div.user-bg {
-    width: 50%;
+    width: max-content;
     margin: auto;
+    padding: 2%;
+}
+
+div.user-bg img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+div.user-bg table {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+div.user-bg button {
+    margin: 1% 0%;
+    width: 200px;
+    display: block;
 }
 
 #tabs {
