@@ -95,12 +95,13 @@
         </div>
 
         <footer>
-            <div id="switchTheme" type="button"></button>
+            <div id="switchTheme" type="button" onclick="themeSwitcher()"></button>
         </footer>
     </body>
     <script lang="javascript">
 
         $(window).on('load', () => {
+            document.title = "Register for Anime now!";
             tabContent = document.getElementsByClassName('tabContent');
             tab = document.getElementsByClassName('tab');
             hideTabsContent(1);
@@ -113,6 +114,7 @@
             let today = now.getFullYear()+"-"+(month)+"-"+(day);
 
             $('[type=date]').val(today);
+            themeOnLoad();
         });
 
         $(".tab").on("click", (e) => {
@@ -127,21 +129,5 @@
             }
         });
 
-        if (getCookie('theme') === 'dark') {
-            setTheme('dark');
-        } else {
-            setCookie('theme', 'light');
-            setTheme('light');
-        }
-
-        $('#switchTheme').on('click', () => {
-            if ($('link[rel="stylesheet"]').attr('href') === 'css/light-theme.css') {
-                setTheme('dark');
-                setCookie('theme', 'dark');
-            } else {
-                setTheme('light');
-                setCookie('theme', 'light');
-            }
-        })
     </script>
 </html>

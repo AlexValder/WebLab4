@@ -6,7 +6,7 @@ Collaborators: @AlexValder, @ArthurMamedov
 
 - [ ] Frontend
   - [ ] Templates with styles
-    - [ ] Authentification page
+    - [x] Authentification page
     - [ ] Main page
     - [ ] User profile
     - [ ] Anime title page
