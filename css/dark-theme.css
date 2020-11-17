@@ -1,9 +1,10 @@
 @import url("./general.css");
 
 body {
-    background-color: #707070;
     color: black;
     text-decoration-color: lavender;
+    background-image: url(../res/bg-dark.jpg);
+    background-size: 45%;
 }
 
 #switchTheme:after {
