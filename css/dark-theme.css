@@ -2,15 +2,19 @@
 
 body {
     color: black;
-    text-decoration-color: lavender;
+    text-decoration-color: darkseagreen;
     background-image: url(../res/bg-dark.jpg);
     background-size: 45%;
+}
+
+div.user-bg {
+    background-color: darkseagreen;
 }
 
 #switchTheme:after {
     content: "Light";
     background-color: dimgray;
-    color: lavender;
+    color: darkseagreen;
     border: none;
 }
 
@@ -21,11 +25,11 @@ body {
 
 #tabs .active {
     border-color: #707070;
-    border-bottom-color: lightseagreen;
-    background-color: lightseagreen;
+    border-bottom-color: darkseagreen;
+    background-color: darkseagreen;
 }
 
 #tabs .tabContent {
     border-color: #707070;
-    background-color: lightseagreen;
+    background-color: darkseagreen;
 }

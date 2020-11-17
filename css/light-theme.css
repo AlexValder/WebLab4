@@ -7,6 +7,10 @@ body {
     background-size: 25%;
 }
 
+div.user-bg {
+    background-color: lavender;
+}
+
 #switchTheme:after {
     content: "Dark";
     background-color: lightgoldenrodyellow;
