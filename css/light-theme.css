@@ -1,4 +1,7 @@
-@import url("general.css");
+@import url("./general.css");
+@import url("./auth.css");
+@import url("./user.css");
+@import url("./anime.css");
 
 body {
     background-color: lavender;
@@ -8,6 +11,10 @@ body {
 }
 
 div.user-bg {
+    background-color: lavender;
+}
+
+div.anime-bg {
     background-color: lavender;
 }
 

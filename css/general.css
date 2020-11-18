@@ -2,71 +2,9 @@ body {
     background-repeat: repeat;
 }
 
-div.user-bg {
-    width: max-content;
-    margin: auto;
-    padding: 2%;
-}
-
-div.user-bg img {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-div.user-bg table {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-div.user-bg button {
-    margin: 1% 0%;
-    width: 200px;
-    display: block;
-}
-
-#tabs {
-    align-self: center;
-    align-content: center;
-    margin-left: 30%;
-    margin-right: 30%;
-    text-align: center;
-}
-
-#tabs .tab {
-    display: inline-block;
-
-    border-radius: 10px;
-    
-    width: 20%;
-    padding: 0.5em 1em;
-    cursor: pointer;
-    border-radius: 0;
-    position: relative;
-    z-index: 5;
-}
-
-#tabs .active {
-    border: 1px solid;
-    border-bottom: 1px solid;
-}
-
-#tabs .tabContent {
-    width: 100%;
-    height: 50%;
-    border: 1px solid;
-    position: relative;
-    top: -1px;
-    z-index: 1;
-
-    padding: 1%;
-}
-
-#tabs .hide {
-    display: none;
-}
-
-#tabs .show {
-    display: block;
+form.unapplyable {
+    visibility: hidden;
+    height: 0%;
 }
 
 .formTable {
@@ -84,15 +22,6 @@ div.user-bg button {
 input {
     text-align: center;
     width: 100%;
-}
-
-input[type="date"] {
-    height: 1em;
-    font: 1em sans-serif;
-}
-
-input[type="submit"], input[type="reset"] {
-    width: auto;
 }
 
 header {
