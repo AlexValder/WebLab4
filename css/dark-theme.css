@@ -2,6 +2,7 @@
 @import url("./auth.css");
 @import url("./user.css");
 @import url("./anime.css");
+@import url("./comments.css");
 
 body {
     color: black;
@@ -10,12 +11,16 @@ body {
     background-size: 45%;
 }
 
-div.user-bg {
+div.user-bg, div.anime-bg, div.comment-section-header {
     background-color: darkseagreen;
 }
 
-div.anime-bg {
-    background-color: darkseagreen;
+div.comment-section {
+    background-color: lightcyan;
+}
+
+div.comment {
+    border: solid 2px green;
 }
 
 #switchTheme:after {

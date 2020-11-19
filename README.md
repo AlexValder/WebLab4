@@ -8,7 +8,8 @@ Collaborators: @AlexValder, @ArthurMamedov
   - [ ] Templates with styles
     - [x] Authentification page
     - [ ] Main page
-    - [ ] User profile
+    - [x] User profile
+      - [ ] Comments
     - [ ] Anime title page
   - [ ] JS scripts
 

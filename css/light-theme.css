@@ -2,6 +2,7 @@
 @import url("./auth.css");
 @import url("./user.css");
 @import url("./anime.css");
+@import url("./comments.css");
 
 body {
     background-color: lavender;
@@ -10,11 +11,7 @@ body {
     background-size: 25%;
 }
 
-div.user-bg {
-    background-color: lavender;
-}
-
-div.anime-bg {
+div.user-bg, div.anime-bg, div.comment-section-header {
     background-color: lavender;
 }
 

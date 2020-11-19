@@ -1,0 +1,40 @@
+div.comment-section-header {
+    height: 2.5em;
+    padding: 1em 0 0 1em;
+    font-size: 120%;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+div.comment-section {
+    margin: auto;
+    margin-top: 1em;
+    width: 50%;
+}
+
+div.comment {
+    padding-left: 1.5em;
+}
+
+div.comment p {
+    display: inline-block;
+}
+
+div.comment-section p.comment-username {
+    font-weight: bold;
+}
+
+div.comment-section p.comment-date {
+    opacity: 70%;
+    font-style: italic;
+}
+
+div.commet p.comment-message {
+    width: 100%;
+    display: block;
+}
+
+p.comment-username {
+    font-size: 120%;
+    text-decoration: bold;
+}
