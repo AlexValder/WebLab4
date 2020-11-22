@@ -16,11 +16,17 @@ div.user-bg, div.anime-bg, div.comment-section-header {
 }
 
 div.comment-section {
-    background-color: lightcyan;
+    background-color: lightgreen;
 }
 
-div.comment {
-    border: solid 2px green;
+div.comment-message {
+    background-color: lightcyan;
+    border-top: solid 1px darkseagreen;
+    border-bottom: solid 1px darkseagreen;
+}
+
+div.comment-send {
+    background-color: lightcyan;
 }
 
 #switchTheme:after {
@@ -29,7 +35,6 @@ div.comment {
     color: darkseagreen;
     border: none;
 }
-
 
 #tabs .tab {
     background-color: gray;

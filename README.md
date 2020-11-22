@@ -9,8 +9,8 @@ Collaborators: @AlexValder, @ArthurMamedov
     - [x] Authentification page
     - [ ] Main page
     - [x] User profile
-      - [ ] Comments
-    - [ ] Anime title page
+    - [x] Anime title page
+      - [x] Comments
   - [ ] JS scripts
 
 - [ ] Backend

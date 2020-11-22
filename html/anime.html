@@ -18,11 +18,12 @@
             <h1>
                 %anime.title% (%anime.released%)
             </h1>
+            <a class="user-link" href="user.html">My Profile</a>
         </header>
 
         <div class="anime-bg">
             <img src="../res/default-user-pic.gif"/>
-            <table>
+            <table class="anime-tb">
                 <tr>
                     <td class="fieldName">
                         Title:
@@ -63,16 +64,27 @@
                 Comments
             </div>
             <div class="comment">
-                <p class="comment-username">
+                <div class="comment-username">
                     %com.username%
-                </p>
-                <p class="comment-date">
+                </div>
+                <div class="comment-date">
                     %com.date%
-                </p><br/>
-                <p class="comment-message">
-                    %com.message%
-                </p>
-            </div>            
+                </div>
+                <div class="comment-message">
+                    <p>
+                        %com.message%
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment-send">
+            <form method="POST" id="comment-send">
+                <textarea required="required" placeholder="Comment..." form="comment-send" id="comment-input">
+
+                </textarea>
+                <input type="submit" value="Send"/>
+            </form>
         </div>
 
         <footer>
@@ -83,6 +95,10 @@
         $(window).on('load', () =>{
             document.title = `%anime.title%`;
             themeOnLoad();
+        });
+
+        $('#comment-input').keyup(function() {
+            $(this).val($(this).val().trim());
         });
     </script>
 </html>

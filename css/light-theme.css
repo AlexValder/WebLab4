@@ -5,14 +5,32 @@
 @import url("./comments.css");
 
 body {
-    background-color: lavender;
+    background-color: lavenderblush;
     text-decoration-color: black;
     background-image: url(../res/bg-light.jpg);
     background-size: 25%;
 }
 
-div.user-bg, div.anime-bg, div.comment-section-header {
-    background-color: lavender;
+div.user-bg, div.anime-bg {
+    background-color: lavenderblush;
+}
+
+div.comment-section-header {
+    background-color: palevioletred;
+}
+
+div.comment-section {
+    background-color: pink;
+}
+
+div.comment-message {
+    background-color: lavenderblush;
+    border-top: solid 1px palevioletred;
+    border-bottom: solid 1px palevioletred;
+}
+
+div.comment-send {
+    background-color: lavenderblush;
 }
 
 #switchTheme:after {

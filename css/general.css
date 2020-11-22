@@ -1,5 +1,6 @@
 body {
     background-repeat: repeat;
+    font-family: sans-serif;
 }
 
 form.unapplyable {
@@ -29,6 +30,7 @@ header {
     text-align: center;
     vertical-align: bottom;
     align-content: center;
+    padding-top: .1em;
     margin-bottom: 5%;
     background-color: #ffffff99;
     height: 5em;
