@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css">
+
+        <!--Adding jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+         <!--Adding local .js files-->
+        <script src="static/main/js/cookies.js"></script>
+        <script src="static/main/js/look_.js"></script>
+        <title></title>
+    </head>
+    <body id="body">
+        <header>
+            <h1>
+                AnimeLand
+            </h1>
+        </header>
+
+        <footer>
+            <div id="switchTheme" type="button" onclick="themeSwitcher()"></button>
+        </footer>
+    </body>
+
+    <script lang="javascript">
+        $(window).on('load', () => {
+            document.title = "AnimeLand";
+            themeOnLoad();
+        });
+        
+    </script>
+</html>

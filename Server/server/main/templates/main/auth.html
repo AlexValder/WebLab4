@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css">
+
+        <!--Adding jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+         <!--Adding local .js files-->
+        <script src="static/main/js/cookies.js"></script>
+        <script src="static/main/js/look_.js"></script>
+        <script src="static/main/js/tabs.js"></script>
+
+        <title></title>
+    </head>
+    <body id="body">
+        <header>
+            <h1>
+                Welcome to AnimeLand!
+            </h1>
+        </header>
+
+        <div id="tabs">
+            <div class="tab active">Sign up</div>
+            <div class="tab">Sign in</div>
+            <div class="tabContent">
+                <form method="POST">
+                    {% csrf_token %}
+                    <table class="formTable">
+                        <tbody>
+                            <tr>
+                                <td class="fieldName">
+                                    <label for="username">Username</label>
+                                </td>
+                                <td>
+                                    <input name="username" type="text" placeholder="John Doe" required="required"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fieldName">
+                                    <label for="password">Password</label>
+                                </td>
+                                <td>
+                                    <input name="password" type="password" placeholder="Enter your password" required="required"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fieldName">
+                                    <label for="email">E-mail</label>
+                                </td>
+                                <td>
+                                    <input type="email" placeholder="john.doe@email.com" required="required"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fieldName">
+                                    Date of birth
+                                </td>
+                                <td>
+                                    <input type="date" required="required"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="submit" method="POST" value="Sign up"/>
+                    <input type="reset" value="Clear"/>
+                </form>
+            </div>
+            <div class="tabContent">
+                <form method="POST">
+                    <table class="formTable">
+                        <tbody>
+                            <tr>
+                                <td class="fieldName">
+                                    <label for="unameOrEmail">Username or email</label>
+                                </td>
+                                <td>
+                                    <input name="unameOrEmail" type="text" placeholder="John Doe" required="required"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fieldName">
+                                    <label for="passwordSignIn">Password</label>
+                                </td>
+                                <td>
+                                    <input name="passwordSignIn" type="password" placeholder="**********" required="required"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="submit" method="POST" value="Sign in"/>
+                    <input type="reset" value="Clear"/>
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <div id="switchTheme" type="button" onclick="themeSwitcher()"></button>
+        </footer>
+    </body>
+    <script lang="javascript">
+
+        $(window).on('load', () => {
+            document.title = "Register for Anime now!";
+            tabContent = document.getElementsByClassName('tabContent');
+            tab = document.getElementsByClassName('tab');
+            hideTabsContent(1);
+
+            let now = new Date();
+
+            let day = ("0" + now.getDate()).slice(-2);
+            let month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+            let today = now.getFullYear()+"-"+(month)+"-"+(day);
+
+            $('[type=date]').val(today);
+            themeOnLoad();
+        });
+
+        $(".tab").on("click", (e) => {
+            let target = e.target;
+            let i = 0;
+            for (const item of tab) {
+                if (target == item) {
+                    showTabsContent(i);
+                    break;
+                }
+                ++i;
+            }
+        });
+
+    </script>
+</html>

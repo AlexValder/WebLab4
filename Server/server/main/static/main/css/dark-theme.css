@@ -1,0 +1,42 @@
+@import url("./general.css");
+@import url("./auth.css");
+@import url("./user.css");
+@import url("./anime.css");
+
+body {
+    color: black;
+    text-decoration-color: darkseagreen;
+    background-image: url(../../../static/main/res/bg-dark.jpg);
+    background-size: 45%;
+}
+
+div.user-bg {
+    background-color: darkseagreen;
+}
+
+div.anime-bg {
+    background-color: darkseagreen;
+}
+
+#switchTheme:after {
+    content: "Light";
+    background-color: dimgray;
+    color: darkseagreen;
+    border: none;
+}
+
+
+#tabs .tab {
+    background-color: gray;
+}
+
+#tabs .active {
+    border-color: #707070;
+    border-bottom-color: darkseagreen;
+    background-color: darkseagreen;
+}
+
+#tabs .tabContent {
+    border-color: #707070;
+    background-color: darkseagreen;
+}
