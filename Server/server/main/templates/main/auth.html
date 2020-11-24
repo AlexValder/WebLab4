@@ -34,7 +34,10 @@
                                     <label for="username">Username</label>
                                 </td>
                                 <td>
-                                    <input name="username" type="text" placeholder="John Doe" required="required"/>
+                                    {{form.username}} <!--This is needed for Django to know about the form content.-->
+                                    <!--So, that's better to replace standard inputs with this. But this must be approved with the server model.-->
+                                    <!--Holy damn.-->
+                                    <!-- <input name="username" class="_form_" type="text" placeholder="John Doe" required="required"/> -->
                                 </td>
                             </tr>
                             <tr>
@@ -42,7 +45,8 @@
                                     <label for="password">Password</label>
                                 </td>
                                 <td>
-                                    <input name="password" type="password" placeholder="Enter your password" required="required"/>
+                                    {{form.password1}}
+                                    <!-- <input name="password" type="password" placeholder="Enter your password" required="required"/> -->
                                 </td>
                             </tr>
                             <tr>
@@ -50,15 +54,17 @@
                                     <label for="email">E-mail</label>
                                 </td>
                                 <td>
-                                    <input type="email" placeholder="john.doe@email.com" required="required"/>
+                                    {{form.email}}
+                                    <!-- <input name="email" type="email" placeholder="john.doe@email.com" required="required"/> -->
                                 </td>
                             </tr>
                             <tr>
                                 <td class="fieldName">
-                                    Date of birth
+                                    Confirm your password
                                 </td>
                                 <td>
-                                    <input type="date" required="required"/>
+                                    {{form.password2}}
+                                    <!-- <input name="date" type="date" required="required"/> -->
                                 </td>
                             </tr>
                         </tbody>
@@ -69,6 +75,7 @@
             </div>
             <div class="tabContent">
                 <form method="POST">
+                    {% csrf_token %}
                     <table class="formTable">
                         <tbody>
                             <tr>

@@ -1,8 +1,10 @@
-from .models import User
-from django.forms import ModelForm, TextInput
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.db import models
+from django import forms
 
 
-class UserForm(ModelForm):
+class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
-        fields = []
+        fields = ['username', 'password1', 'password2', 'email']
