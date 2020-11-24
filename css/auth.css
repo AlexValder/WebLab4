@@ -48,6 +48,6 @@ input[type="date"] {
     font: 1em sans-serif;
 }
 
-input[type="submit"], input[type="reset"] {
+input[type="checkbox"], label[for="is-adult"], input[type="submit"], input[type="reset"] {
     width: auto;
 }
