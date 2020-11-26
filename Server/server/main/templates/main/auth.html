@@ -72,7 +72,9 @@
                     <input type="submit" method="POST" value="Sign up"/>
                     <input type="reset" value="Clear"/>
                 </form>
-                {{form.errors}}
+                {% for error in form.errors.values %}
+                    {{error}}
+                {% endfor %}
             </div>
             <div class="tabContent">
                 <form method="POST">
@@ -100,7 +102,7 @@
                     <input type="submit" method="POST" value="Sign in"/>
                     <input type="reset" value="Clear"/>
                 </form>
-                {{form.errors}}
+                {{signinerror}}
             </div>
         </div>
 
