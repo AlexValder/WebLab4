@@ -34,10 +34,7 @@
                                     <label for="username">Username</label>
                                 </td>
                                 <td>
-                                    {{form.username}} <!--This is needed for Django to know about the form content.-->
-                                    <!--So, that's better to replace standard inputs with this. But this must be approved with the server model.-->
-                                    <!--Holy damn.-->
-                                    <!-- <input name="username" class="_form_" type="text" placeholder="John Doe" required="required"/> -->
+                                    {{form.username}}
                                 </td>
                             </tr>
                             <tr>
@@ -46,7 +43,6 @@
                                 </td>
                                 <td>
                                     {{form.password1}}
-                                    <!-- <input name="password" type="password" placeholder="Enter your password" required="required"/> -->
                                 </td>
                             </tr>
                             <tr>
@@ -55,7 +51,6 @@
                                 </td>
                                 <td>
                                     {{form.email}}
-                                    <!-- <input name="email" type="email" placeholder="john.doe@email.com" required="required"/> -->
                                 </td>
                             </tr>
                             <tr>
@@ -64,11 +59,12 @@
                                 </td>
                                 <td>
                                     {{form.password2}}
-                                    <!-- <input name="date" type="date" required="required"/> -->
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+                    <label for="is-adult">I am at least 18 years old</label>
+                    <input type="checkbox" name="is-adult" id="is-adult" required="required"/><br/><br/>
                     <input type="submit" method="POST" value="Sign up"/>
                     <input type="reset" value="Clear"/>
                 </form>

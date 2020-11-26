@@ -31,7 +31,8 @@ def auth(request: WSGIRequest):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return render(request, 'main/main.html')
+                return redirect('/')
+                #return render(request, 'main/main.html')
             context['signinerror'] = 'Wrong password or email.'
     context['form'] = form
     return render(request, 'main/auth.html', context)

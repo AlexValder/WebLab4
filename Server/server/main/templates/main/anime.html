@@ -16,15 +16,16 @@
     <body>
         <header>
             <h1>
-                %animetitle%
+                %anime.title% (%anime.released%)
             </h1>
+            <a class="user-link" href="user.html">My Profile</a>
         </header>
 
         <div class="anime-bg">
             <img src="../res/default-user-pic.gif"/>
-            <table>
+            <table class="anime-tb">
                 <tr>
-                    <td>
+                    <td class="fieldName">
                         Title:
                     </td>
                     <td>
@@ -32,7 +33,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="fieldName">
                         Released:
                     </td>
                     <td>
@@ -40,7 +41,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="fieldName">
                         Genres:
                     </td>
                     <td>
@@ -48,7 +49,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="fieldName">
                         Description:
                     </td>
                     <td>
@@ -58,8 +59,32 @@
             </table>
         </div>
 
-        <div class="comment">
-            
+        <div class="comment-section">
+            <div class="comment-section-header">
+                Comments
+            </div>
+            <div class="comment">
+                <div class="comment-username">
+                    %com.username%
+                </div>
+                <div class="comment-date">
+                    %com.date%
+                </div>
+                <div class="comment-message">
+                    <p>
+                        %com.message%
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment-send">
+            <form method="POST" id="comment-send">
+                <textarea required="required" placeholder="Comment..." form="comment-send" id="comment-input">
+
+                </textarea>
+                <input type="submit" value="Send"/>
+            </form>
         </div>
 
         <footer>
@@ -70,6 +95,10 @@
         $(window).on('load', () =>{
             document.title = `%anime.title%`;
             themeOnLoad();
+        });
+
+        $('#comment-input').keyup(function() {
+            $(this).val($(this).val().trim());
         });
     </script>
 </html>

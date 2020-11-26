@@ -2,35 +2,20 @@
 @import url("./auth.css");
 @import url("./user.css");
 @import url("./anime.css");
-@import url("./comments.css");
 
 body {
-    background-color: lavenderblush;
+    background-color: lavender;
     text-decoration-color: black;
-    background-image: url(../res/bg-light.jpg);
+    background-image: url(../../../static/main/res/bg-light.jpg);
     background-size: 25%;
 }
 
-div.user-bg, div.anime-bg {
-    background-color: lavenderblush;
+div.user-bg {
+    background-color: lavender;
 }
 
-div.comment-section-header {
-    background-color: palevioletred;
-}
-
-div.comment-section {
-    background-color: pink;
-}
-
-div.comment-message {
-    background-color: lavenderblush;
-    border-top: solid 1px palevioletred;
-    border-bottom: solid 1px palevioletred;
-}
-
-div.comment-send {
-    background-color: lavenderblush;
+div.anime-bg {
+    background-color: lavender;
 }
 
 #switchTheme:after {

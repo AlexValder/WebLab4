@@ -2,31 +2,20 @@
 @import url("./auth.css");
 @import url("./user.css");
 @import url("./anime.css");
-@import url("./comments.css");
 
 body {
     color: black;
     text-decoration-color: darkseagreen;
-    background-image: url(../res/bg-dark.jpg);
+    background-image: url(../../../static/main/res/bg-dark.jpg);
     background-size: 45%;
 }
 
-div.user-bg, div.anime-bg, div.comment-section-header {
+div.user-bg {
     background-color: darkseagreen;
 }
 
-div.comment-section {
-    background-color: lightgreen;
-}
-
-div.comment-message {
-    background-color: lightcyan;
-    border-top: solid 1px darkseagreen;
-    border-bottom: solid 1px darkseagreen;
-}
-
-div.comment-send {
-    background-color: lightcyan;
+div.anime-bg {
+    background-color: darkseagreen;
 }
 
 #switchTheme:after {
@@ -35,6 +24,7 @@ div.comment-send {
     color: darkseagreen;
     border: none;
 }
+
 
 #tabs .tab {
     background-color: gray;
