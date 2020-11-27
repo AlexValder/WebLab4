@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<style>
+.cref{
+    color:black;
+    text-decoration: none;
+}
+</style>
 <html>
     <head>
         <meta charset="utf-8">
@@ -14,10 +20,10 @@
     </head>
     <body id="body">
         <header>
-            <h1>
-                Congratulations, {{username}}! You've successfully {{up_or_in}}!<br>
-                <a href="/auth">Back</a>
-            </h1>
+            <div style="font-size:xx-large; font-weight: bold; vertical-align: middle;">Congratulations, {{username}}! You've successfully {{up_or_in}}!</div>
+            <div style="vertical-align:middle; font-weight: bold; text-align: right; margin-right: 1%;">
+                <a class="cref" href="/auth">Back</a>
+            </div>
         </header>
             If i wasn't super lazy, I'd put a gif image here, but I am, so deal with it.
         <footer>

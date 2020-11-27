@@ -1,9 +1,9 @@
 function setTheme(theme) {
-    $('link[rel="stylesheet"]').attr('href', `static/main/css/${theme}-theme.css`);
+    $('link[rel="stylesheet"]').attr('href', `../static/main/css/${theme}-theme.css`);
 }
 
 let themeSwitcher = () => {
-    if ($('link[rel="stylesheet"]').attr('href') === 'static/main/css/light-theme.css') {
+    if ($('link[rel="stylesheet"]').attr('href') === '../static/main/css/light-theme.css') {
         setTheme('dark');
         setCookie('theme', 'dark');
     } else {

@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<style>
+    .cref{
+        color:black;
+        text-decoration: none;
+    }
+</style>
 <html>
     <head>
         <link rel="stylesheet" type="text/css">
@@ -7,29 +13,32 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
          <!--Adding local .js files-->
-        <script src="../js/cookies.js"></script>
-        <script src="../js/look.js"></script>
-        <script src="../js/tabs.js"></script>
+        <script src="../static/main/js/cookies.js"></script>
+        <script src="../static/main/js/look_.js"></script>
+        <script src="../static/main/js/tabs.js"></script>
+
 
         <title></title>
     </head>
     <body>
         <header>
-            <h1>
-                %anime.title% (%anime.released%)
-            </h1>
-            <a class="user-link" href="user.html">My Profile</a>
+            <div style="font-size:xx-large; font-weight: bold; vertical-align: middle;">{{title}} ({{released}})</div>
+            <div style="vertical-align:middle; font-weight: bold; text-align: right; margin-right: 1%;">
+                <a class="cref" href="../">main</a> |
+                <a class="cref" href="../user">{{request.user}}</a> | 
+                <a class="cref" href="/logout">logout</a>
+            </div>
         </header>
 
         <div class="anime-bg">
-            <img src="../res/default-user-pic.gif"/>
+            <img src="data:image/png;base64,{{picture}}"/>
             <table class="anime-tb">
                 <tr>
                     <td class="fieldName">
                         Title:
                     </td>
                     <td>
-                        %anime.title%
+                        {{title}}
                     </td>
                 </tr>
                 <tr>
@@ -37,7 +46,7 @@
                         Released:
                     </td>
                     <td>
-                        %anime.released%
+                        {{released}}
                     </td>
                 </tr>
                 <tr>
@@ -45,7 +54,7 @@
                         Genres:
                     </td>
                     <td>
-                        %anime.genres%
+                        {{genre}}
                     </td>
                 </tr>
                 <tr>
@@ -53,13 +62,13 @@
                         Description:
                     </td>
                     <td>
-                        %anime.desc%
+                        {{description}}
                     </td>
                 </tr>
             </table>
         </div>
 
-        <div class="comment-section">
+        <!-- <div class="comment-section">
             <div class="comment-section-header">
                 Comments
             </div>
@@ -85,7 +94,7 @@
                 </textarea>
                 <input type="submit" value="Send"/>
             </form>
-        </div>
+        </div> -->
 
         <footer>
             <div id="switchTheme" type="button" onclick="themeSwitcher()"></button>
@@ -93,12 +102,12 @@
     </body>
     <script>
         $(window).on('load', () =>{
-            document.title = `%anime.title%`;
+            document.title = `{{title}}`;
             themeOnLoad();
         });
 
-        $('#comment-input').keyup(function() {
-            $(this).val($(this).val().trim());
-        });
+        // $('#comment-input').keyup(function() {
+        //     $(this).val($(this).val().trim());
+        // });
     </script>
 </html>

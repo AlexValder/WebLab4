@@ -1,12 +1,15 @@
+from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.core.handlers.wsgi import WSGIRequest
 from django.contrib.auth import authenticate, login, logout
-from .forms import CreateUserForm
 from django.contrib.auth.decorators import login_required
+from .forms import CreateUserForm
+from .models import Anime
 
 @login_required(login_url='/auth')
 def index(request: WSGIRequest):
-    return render(request, 'main/main.html')
+    animes = Anime.objects.all()
+    return render(request, 'main/main.html', {'animes': animes})
 
 
 def user(request: WSGIRequest):
@@ -36,6 +39,17 @@ def auth(request: WSGIRequest):
             context['signinerror'] = 'Wrong password or email.'
     context['form'] = form
     return render(request, 'main/auth.html', context)
+
+
+@login_required(login_url='/auth')
+def anime(request: WSGIRequest, slugname):
+    animes = Anime.objects.all()
+    slugname = slugname.replace('"', '')
+    for anime in animes:
+        if anime.slugTitle == slugname:
+            return render(request, 'main/anime.html', {'title': anime.title, 'description': anime.description, 'genre': anime.genre, 'picture': anime.picture, 'released': anime.released})
+    print(f'ANIME: {request}, add: {slugname}')
+    return HttpResponse('Error 404: page not found.') #render(request, 'main/anime.html')
 
 
 def logoutUser(request: WSGIRequest):

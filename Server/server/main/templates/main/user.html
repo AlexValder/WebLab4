@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<style>
+    .cref{
+        color:black;
+        text-decoration: none;
+    }
+</style>
 <html>
     <head>
         <meta charset="utf-8">
@@ -8,29 +14,31 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <!--Adding local .js files-->
-        <script src="../js/cookies.js"></script>
-        <script src="../js/look.js"></script>
+        <script src="../static/main/js/cookies.js"></script>
+        <script src="../static/main/js/look_.js"></script>
         <title></title>
     </head>
     <body>
         <header>
-            <h1>
-                AnimeLand User {{ username }}
-            </h1>
+            <div style="font-size:xx-large; font-weight: bold; vertical-align: middle;">AnimeLand User</div>
+            <div style="vertical-align:middle; font-weight: bold; text-align: right; margin-right: 1%;">
+                <a class="cref" href="../">main</a> |
+                <a class="cref" href="/logout">logout</a>
+            </div>
         </header>
 
         <div class="user-bg">
-            <img class="user-avatar" src="../res/default-user-pic.gif"/>
+            <img class="user-avatar" src="static/main/res/userpic.png"/>
             <table>
                 <tr>
                     <td>
                         Username:
                     </td>
                     <td>
-                        %user.username%
+                        {{request.user}}
                     </td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>
                         Age:
                     </td>
@@ -61,13 +69,13 @@
                     <td>
                         %user.tel%
                     </td>
-                </tr>
+                </tr> -->
             </table>
 
-            <form method="POST" class="">
+            <!-- <form method="POST" class="">
                 <input type="submit" value="Upload new avatar"/>
                 <input name="newUserpic" id="newUserpic" type="file" accept="image/*" required="required"></input>
-            </form>
+            </form> -->
         </div>
 
         <footer>

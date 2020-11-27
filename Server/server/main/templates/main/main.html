@@ -1,4 +1,23 @@
 <!DOCTYPE html>
+
+<style>
+    .cont{
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.55);
+        margin-left: 30%;
+        margin-right: 30%;
+        height:110px;
+        transition: transform .2s;
+    }
+    .cont:hover {
+        transform: scale(1.2);
+    }
+    .cref{
+        color:black;
+        text-decoration: none;
+    }
+</style>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -16,10 +35,19 @@
         <header>
             <div>
                 <div style="font-size:xx-large; font-weight: bold; vertical-align: middle;">AnimeLand</div>
-                <div style="vertical-align:middle; font-weight: bold; text-align: right; margin-right: 1%;">Hello, {{request.user}}! <a href="/logout">logout</a></div>
+                <div style="vertical-align:middle; font-weight: bold; text-align: right; margin-right: 1%;">
+                    <a class="cref" href="../user">{{request.user}}</a> |
+                    <a class="cref" href="/logout">logout</a>
+                </div>
             </div>
         </header>
-
+        {% for element in animes %}
+            <div class="cont"><a href=/anime/{{element.slugTitle}}" style="color:black; text-decoration: none;">
+                <img src="data:image/png;base64,{{element.picture}}" height=100px style="float: left; margin: 5px 0px 5px 5px;">
+                <h2 style="padding-top: 15px">{{element.title}}</h2>
+            </a></div>
+            <br>
+        {% endfor %}
         <footer>
             <div id="switchTheme" type="button" onclick="themeSwitcher()"></button>
         </footer>
