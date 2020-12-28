@@ -10,7 +10,8 @@ div.comment-section-header {
 div.comment-section {
     margin: auto;
     margin-top: 1%;
-    width: 50%;
+    width: 60%;
+    padding: 1%;
 }
 
 div.comment {
@@ -48,11 +49,12 @@ div.comment-message p {
 div.comment-send {
     margin: auto;
     margin-top: 1em;
-    width: 50%;
+    width: 60%;
+    padding: 1%;
 }
 
 div.comment-send form {
-    margin: 1em;
+    /* margin: 1em; */
     padding-bottom: 10px;
     align-content: center;
     align-self: center;

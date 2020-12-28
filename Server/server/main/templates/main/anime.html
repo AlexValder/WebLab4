@@ -67,34 +67,35 @@
                 </tr>
             </table>
         </div>
-
-        <!-- <div class="comment-section">
+        
+        <div class="comment-send">
+            <form method="POST" id="comment-send">
+                {% csrf_token %}
+                <textarea required="required" placeholder="Comment..." form="comment-send" id="comment-input" name="comment"></textarea>
+                <input type="submit" value="Send"/>
+            </form>
+        </div>
+        
+        <div class="comment-section">
             <div class="comment-section-header">
                 Comments
             </div>
-            <div class="comment">
-                <div class="comment-username">
-                    %com.username%
+            {% for com in comments %}
+                <div class="comment">
+                    <div class="comment-username">
+                        {{com.usrname}}
+                    </div>
+                    <div class="comment-date">
+                        {{com.date}}
+                    </div>
+                    <div class="comment-message">
+                        <p>
+                            {{com.comment}}
+                        </p>
+                    </div>
                 </div>
-                <div class="comment-date">
-                    %com.date%
-                </div>
-                <div class="comment-message">
-                    <p>
-                        %com.message%
-                    </p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
-
-        <div class="comment-send">
-            <form method="POST" id="comment-send">
-                <textarea required="required" placeholder="Comment..." form="comment-send" id="comment-input">
-
-                </textarea>
-                <input type="submit" value="Send"/>
-            </form>
-        </div> -->
 
         <footer>
             <div id="switchTheme" type="button" onclick="themeSwitcher()"></button>

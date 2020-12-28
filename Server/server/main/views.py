@@ -1,10 +1,14 @@
-from django.http.response import HttpResponse
+from django.db import models
+from django import forms
+from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.core.handlers.wsgi import WSGIRequest
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import CreateUserForm
-from .models import Anime
+from .forms import CreateUserForm, AddCommentForm
+from .models import Anime, Comments
+from datetime import  datetime
+
 
 @login_required(login_url='/auth')
 def index(request: WSGIRequest):
@@ -13,7 +17,6 @@ def index(request: WSGIRequest):
 
 
 def user(request: WSGIRequest):
-    #add here reading from DB
     return render(request, 'main/user.html')
 
 
@@ -43,13 +46,26 @@ def auth(request: WSGIRequest):
 
 @login_required(login_url='/auth')
 def anime(request: WSGIRequest, slugname):
-    animes = Anime.objects.all()
     slugname = slugname.replace('"', '')
-    for anime in animes:
-        if anime.slugTitle == slugname:
-            return render(request, 'main/anime.html', {'title': anime.title, 'description': anime.description, 'genre': anime.genre, 'picture': anime.picture, 'released': anime.released})
-    print(f'ANIME: {request}, add: {slugname}')
-    return HttpResponse('Error 404: page not found.') #render(request, 'main/anime.html')
+    if request.method == 'POST':
+        comment = request.POST.get('comment')
+        request.POST._mutable = True
+        request.POST.appendlist('usrname', request.user.username)
+        request.POST.appendlist('date', datetime.today())
+        request.POST.appendlist('slugTitle', slugname)
+        request.POST._mutable = False
+        form = AddCommentForm(request.POST)
+        print(f'CLEANED DATA: {form.fields}')
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path_info)
+        else:
+           print('Some error happend: form is not valie\n{}'.format(form))
+    anime = Anime.objects.filter(slugTitle=slugname)
+    comments = Comments.objects.filter(slugTitle=slugname)
+    if anime:
+        return render(request, 'main/anime.html', {'title': anime[0].title, 'description': anime[0].description, 'genre': anime[0].genre, 'picture': anime[0].picture, 'released': anime[0].released, 'comments': comments})
+    return HttpResponse('Error 404: page not found.')
 
 
 def logoutUser(request: WSGIRequest):

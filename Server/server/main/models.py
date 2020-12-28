@@ -9,20 +9,27 @@ class Anime(models.Model):
     released = models.DateField('released')
     slugTitle = models.SlugField('slugTitle', max_length=30)
 
+
     def __str__(self):
         return self.title
+
 
     class Meta:
         verbose_name = 'Anime'
         verbose_name_plural = 'Animes'
 
-# class User(models.Model):
-#     username = models.CharField('username', max_length=50)
-#     password = models.CharField('password', max_length=50)
-#     email    = models.CharField('email', max_length=320)
-#     date     = models.DateField('date')
-#     # title = models.CharField('Name', max_length=50)
-#     # task = models.TextField('Desctiption')
 
-#     def __str__(self):
-#         return self.username
+class Comments(models.Model):
+    comment = models.TextField('comment')
+    usrname = models.CharField('usrname', max_length=25)
+    date = models.DateField('date')
+    slugTitle = models.SlugField('slugTitle', max_length=30)
+
+
+    def __str__(self):
+        return f'{self.usrname}\'s comment.'
+
+
+    class Meta:
+        verbose_name = 'Comment'
+        verbose_name_plural = 'Comments'
