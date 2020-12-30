@@ -32,20 +32,22 @@
          <!--Adding local .js files-->
         <script src="static/main/js/cookies.js"></script>
         <script src="static/main/js/look_.js"></script>
+        <script src="static/main/js/fake_viewers.js"></script>
         <title></title>
     </head>
     <body id="body">
         <header>
             <div>
                 <div style="font-size:xx-large; font-weight: bold; vertical-align: middle;">AnimeLand</div>
-                <div style="vertical-align:middle; font-weight: bold; text-align: right; margin-right: 1%;">
+                <div class="various-data"></div>
+                <div style="vertical-align:middle; font-weight: bold; text-align: right; margin-right: 1%; display: inline-flexbox;">
                     <a class="cref" href="../user">{{request.user}}</a> |
                     <a class="cref" href="/logout">logout</a>
                 </div>
             </div>
         </header>
         {% for element in animes %}
-            <div class="cont"><a href=/anime/{{element.slugTitle}}" style="color:black; text-decoration: none;">
+            <div class="cont"><a href="/anime/{{element.slugTitle}}" style="color:black; text-decoration: none;">
                 <img src="data:image/png;base64,{{element.picture}}" height=100px style="float: left; margin: 5px 0px 5px 5px;">
                 <h2 style="padding-top: 15px">{{element.title}}</h2>
             </a></div>
@@ -60,7 +62,11 @@
         $(window).on('load', () => {
             document.title = "AnimeLand";
             themeOnLoad();
+            $.ajax(randomOrgFakeAjaxObject);
         });
-        
+
+        $('.various-data').on('click', () => {
+            $.ajax(randomOrgFakeAjaxObject);
+        });
     </script>
 </html>

@@ -19,7 +19,7 @@
         <!--Adding local .js files-->
         <script src="../static/main/js/cookies.js"></script>
         <script src="../static/main/js/look_.js"></script>
-        <title></title>
+        <title>{{request.user}}</title>
     </head>
     <body>
         <header>
@@ -87,7 +87,7 @@
     </body>
     <script lang="javascript">
         $(window).on('load', () => {
-            document.title = `%user% Profile`;
+            document.title = `{{request.user}} Profile`;
             themeOnLoad();
         });
     </script>
