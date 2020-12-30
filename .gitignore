@@ -1,0 +1,4 @@
+/__forignore
+/Server/server/main/__pycache__/
+/Server/server/main/migrations/__pycache__/
+*.pyc

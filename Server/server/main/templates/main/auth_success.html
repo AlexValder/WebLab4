@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<style>
+.cref{
+    color:black;
+    text-decoration: none;
+}
+</style>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css">
+
+        <!--Adding jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+         <!--Adding local .js files-->
+        <script src="static/main/js/cookies.js"></script>
+        <script src="static/main/js/look_.js"></script>
+        <title></title>
+    </head>
+    <body id="body">
+        <header>
+            <div style="font-size:xx-large; font-weight: bold; vertical-align: middle;">Congratulations, {{username}}! You've successfully {{up_or_in}}!</div>
+            <div style="vertical-align:middle; font-weight: bold; text-align: right; margin-right: 1%;">
+                <a class="cref" href="/auth">Back</a>
+            </div>
+        </header>
+            If i wasn't super lazy, I'd put a gif image here, but I am, so deal with it.
+        <footer>
+            <div id="switchTheme" type="button" onclick="themeSwitcher()"></button>
+        </footer>
+    </body>
+
+    <script lang="javascript">
+        $(window).on('load', () => {
+            document.title = "AnimeLand";
+            themeOnLoad();
+        });
+        
+    </script>
+</html>

@@ -1,0 +1,21 @@
+div.anime-bg {
+    margin: auto;
+    width: 60%;
+    padding: 1%;
+}
+
+div.anime-bg img {
+    width: 50%;
+    margin-left: 25%;
+}
+
+table.anime-tb {
+    width: 100%;
+}
+
+table.anime-tb td.fieldName {
+    width: 10%;
+    padding: .5em;
+    font-weight: bold;
+    font-style: italic;
+}

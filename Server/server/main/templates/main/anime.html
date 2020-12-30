@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<style>
+    .cref{
+        color:black;
+        text-decoration: none;
+    }
+</style>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css">
+
+        <!--Adding jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+         <!--Adding local .js files-->
+        <script src="../static/main/js/cookies.js"></script>
+        <script src="../static/main/js/look_.js"></script>
+        <script src="../static/main/js/tabs.js"></script>
+
+
+        <title></title>
+    </head>
+    <body>
+        <header>
+            <div style="font-size:xx-large; font-weight: bold; vertical-align: middle;">{{title}} ({{released}})</div>
+            <div style="vertical-align:middle; font-weight: bold; text-align: right; margin-right: 1%;">
+                <a class="cref" href="../">main</a> |
+                <a class="cref" href="../user">{{request.user}}</a> | 
+                <a class="cref" href="/logout">logout</a>
+            </div>
+        </header>
+
+        <div class="anime-bg">
+            <img src="data:image/png;base64,{{picture}}"/>
+            <table class="anime-tb">
+                <tr>
+                    <td class="fieldName">
+                        Title:
+                    </td>
+                    <td>
+                        {{title}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldName">
+                        Released:
+                    </td>
+                    <td>
+                        {{released}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldName">
+                        Genres:
+                    </td>
+                    <td>
+                        {{genre}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fieldName">
+                        Description:
+                    </td>
+                    <td>
+                        {{description}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="comment-send">
+            <form method="POST" id="comment-send">
+                {% csrf_token %}
+                <textarea required="required" placeholder="Comment..." form="comment-send" id="comment-input" name="comment"></textarea>
+                <input type="submit" value="Send"/>
+            </form>
+        </div>
+        
+        <div class="comment-section">
+            <div class="comment-section-header">
+                Comments
+            </div>
+            {% for com in comments %}
+                <div class="comment">
+                    <div class="comment-username">
+                        {{com.usrname}}
+                    </div>
+                    <div class="comment-date">
+                        {{com.date}}
+                    </div>
+                    <div class="comment-message">
+                        <p>
+                            {{com.comment}}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <footer>
+            <div id="switchTheme" type="button" onclick="themeSwitcher()"></button>
+        </footer>
+    </body>
+    <script>
+        $(window).on('load', () =>{
+            document.title = `{{title}}`;
+            themeOnLoad();
+        });
+
+        // $('#comment-input').keyup(function() {
+        //     $(this).val($(this).val().trim());
+        // });
+    </script>
+</html>
