@@ -8,5 +8,6 @@ urlpatterns = [
     path('user', views.user),
     path('auth', views.auth),
     path('logout', views.logoutUser),
+    path('authors', views.authors),
     path('favicon.ico', RedirectView.as_view(url='/static/main/res/favicon.ico'), name='favicon'),
 ]
