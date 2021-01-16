@@ -71,3 +71,7 @@ def anime(request: WSGIRequest, slugname):
 def logoutUser(request: WSGIRequest):
     logout(request)
     return redirect('/auth')
+
+
+def authors(request: WSGIRequest):
+    return render(request, 'main/authors.html')
