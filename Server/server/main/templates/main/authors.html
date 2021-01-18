@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../../static/main/css/dark-theme.css">
 
         <!--Adding jQuery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -17,6 +17,54 @@
 
         <title></title>
     </head>
-    <body id="body">
+    <body>
+    <header>
+        <div style="font-size:xx-large; font-weight: bold; vertical-align: middle;">Hello there!</div>
+        <div style="vertical-align:middle; font-weight: bold; text-align: right; margin-right: 1%;">
+            <a class="cref" href="../">main</a> |
+            <a class="cref" href="/logout">logout</a>
+        </div>
+    </header>
+        <div class="author-table">
+            <h2>Authors</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Server
+                        </td>
+                        <td>
+                            <a href="https://github.com/ArthurMamedov">Arthur Mamedov</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Frontend
+                        </td>
+                        <td>
+                            <a href="https://github.com/AlexValder">AlexValder</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Cool video we found online:</h2>
+            <iframe id="youtube-video"
+                src="https://www.youtube-nocookie.com/embed/AlxiNhmGKyg"
+                frameborder="0"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <footer>
+            <div id="switchTheme" type="button" onclick="themeSwitcher()"></button>
+        </footer>
     </body>
+
+    <script lang="javascript">
+        $(window).on('load', () => {
+            document.title = "Authors";
+            themeOnLoad();
+        });
+    </script>
 </html>

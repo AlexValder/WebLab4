@@ -4,6 +4,7 @@
 @import url("./anime.css");
 @import url("./comments.css");
 @import url("./widget.css");
+@import url("./authors.css");
 
 body {
     background-color: lavenderblush;
