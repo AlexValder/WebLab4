@@ -66,8 +66,11 @@
             $.ajax(randomOrgFakeAjaxObject);
         });
 
-        $('.various-data').on('click', () => {
+        let makeFakeViews =  () => {
             $.ajax(randomOrgFakeAjaxObject);
-        });
+        }
+
+        $('.various-data').on('click', makeFakeViews);
+        setInterval(makeFakeViews, 60 * 1000); // 1min
     </script>
 </html>

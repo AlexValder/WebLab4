@@ -4,6 +4,6 @@ function updateFakeCurrentViewers(data, _, _) {
 
 let randomOrgFakeAjaxObject = {
     "type": "GET",
-    "url": "http://www.random.org/integers/?num=1&min=0&max=10&col=5&base=10&format=plain&rnd=new",
+    "url": "http://www.random.org/integers/?num=1&min=1&max=10&col=5&base=10&format=plain&rnd=new",
     "success": updateFakeCurrentViewers
 };
